@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+/* ─── Color Tokens ─────────────────────────────────────── */
+:root {
+  --burgundy:       #6B2D45;
+  --burgundy-dark:  #4A1E30;
+  --burgundy-mid:   #5C2539;
+  --burgundy-light: #8B3D5A;
+  --cream:          #F5EFE6;
+  --off-white:      #FAFAF7;
+  --muted-rose:     #C4899A;
+  --beige:          #E8DDD0;
+  --text-on-burg:   rgba(255,255,255,0.92);
+  --text-muted:     rgba(255,255,255,0.55);
+}
+
+/* ─── Base ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--burgundy);
+  color: var(--text-on-burg);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ─── Typography ────────────────────────────────────────── */
+.font-serif { font-family: 'Playfair Display', Georgia, 'Times New Roman', serif; }
+.font-sans  { font-family: 'Inter', system-ui, sans-serif; }
+
+/* ─── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: var(--burgundy-dark); }
+::-webkit-scrollbar-thumb { background: var(--muted-rose); border-radius: 3px; }
+
+/* ─── Outline text ──────────────────────────────────────── */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 2.5px rgba(255,255,255,0.88);
+}
+.text-outline-cream {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--burgundy);
+}
+
+/* ─── Section backgrounds ───────────────────────────────── */
+.section-cream     { background-color: var(--cream);     color: var(--burgundy-dark); }
+.section-off-white { background-color: var(--off-white); color: var(--burgundy-dark); }
+.section-beige     { background-color: var(--beige);     color: var(--burgundy-dark); }
+
+/* ─── Buttons ───────────────────────────────────────────── */
+.btn-outline-white {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 28px;
+  border: 1px solid rgba(255,255,255,0.65);
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.9); background: transparent;
+  cursor: pointer; text-decoration: none;
+  transition: background 0.25s ease, border-color 0.25s ease;
+  white-space: nowrap;
+}
+.btn-outline-white:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,1);
+}
+
+.btn-outline-dark {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 28px;
+  border: 1px solid var(--burgundy);
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
+  color: var(--burgundy); background: transparent;
+  cursor: pointer; text-decoration: none;
+  transition: background 0.25s ease, color 0.25s ease;
+  white-space: nowrap;
+}
+.btn-outline-dark:hover { background: var(--burgundy); color: #fff; }
+
+.btn-filled {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 32px;
+  border-radius: 100px; border: none;
+  font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
+  color: #fff; background: var(--burgundy);
+  cursor: pointer; text-decoration: none;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+.btn-filled:hover { background: var(--burgundy-light); transform: translateY(-1px); }
+
+/* ─── Section label ─────────────────────────────────────── */
+.section-label {
+  font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.55;
+}
+
+/* ─── Portfolio card ────────────────────────────────────── */
+.portfolio-card { position: relative; overflow: hidden; border-radius: 4px; cursor: pointer; }
+.portfolio-card .card-overlay {
+  position: absolute; inset: 0;
+  background: rgba(74,30,48,0.84);
+  opacity: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 24px; text-align: center;
+  transition: opacity 0.35s ease;
+}
+.portfolio-card:hover .card-overlay { opacity: 1; }
+.portfolio-card .card-img { transition: transform 0.55s ease; width: 100%; height: 100%; object-fit: cover; display: block; }
+.portfolio-card:hover .card-img { transform: scale(1.04); }
+
+/* ─── Timeline ──────────────────────────────────────────── */
+.timeline-item { display: flex; gap: 24px; position: relative; padding-bottom: 40px; }
+.timeline-item:not(:last-child)::before {
+  content: ''; position: absolute; left: 4px; top: 16px; bottom: 0;
+  width: 1px; background: rgba(107,45,69,0.25);
+}
+.timeline-dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--burgundy); flex-shrink: 0; margin-top: 7px;
+}
+
+/* ─── Skill card ────────────────────────────────────────── */
+.skill-card {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  padding: 24px 12px;
+  border: 1px solid rgba(107,45,69,0.15); border-radius: 8px;
+  background: rgba(255,255,255,0.55);
+  color: var(--burgundy-dark);
+  transition: box-shadow 0.25s ease, transform 0.25s ease, background 0.25s ease;
+  backdrop-filter: blur(4px);
+}
+.skill-card:hover {
+  box-shadow: 0 8px 28px rgba(107,45,69,0.13);
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.85);
+}
+
+/* ─── Contact form ──────────────────────────────────────── */
+.form-input {
+  width: 100%; padding: 13px 0;
+  border: none; border-bottom: 1px solid rgba(107,45,69,0.25);
+  background: transparent;
+  font-family: 'Inter', sans-serif; font-size: 14px; color: var(--burgundy-dark);
+  outline: none; transition: border-color 0.2s ease;
+}
+.form-input::placeholder { color: rgba(107,45,69,0.38); }
+.form-input:focus { border-bottom-color: var(--burgundy); }
