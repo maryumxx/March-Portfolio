@@ -1,6 +1,7 @@
 "use client";
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
 
@@ -11,7 +12,7 @@ const socials = [
   { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61578826023769"         },
 ];
 
-type Status = "idle" | "sending" | "sent";
+type Status = "idle" | "sending" | "sent" | "error";
 
 export default function ContactSection() {
   const ref = useRef<HTMLElement>(null);
@@ -23,10 +24,25 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
-    await new Promise(r => setTimeout(r, 1600));
-    setStatus("sent");
-    setForm({ name: "", email: "", subject: "", message: "" });
-    setTimeout(() => setStatus("idle"), 4000);
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          subject: form.subject,
+          message: form.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+      setStatus("sent");
+      setForm({ name: "", email: "", subject: "", message: "" });
+      setTimeout(() => setStatus("idle"), 5000);
+    } catch {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 4000);
+    }
   };
 
   const anim = (delay: number) => ({
@@ -84,6 +100,19 @@ export default function ContactSection() {
                 <span className="text-3xl">✉️</span>
                 <h3 className="font-serif text-2xl font-bold text-[#4A1E30]">Message Sent</h3>
                 <p className="font-sans text-sm text-[#4A1E30] opacity-60">Thank you — I&apos;ll be in touch shortly.</p>
+              </motion.div>
+            ) : status === "error" ? (
+              <motion.div
+                key="error"
+                className="py-16 flex flex-col items-center gap-3"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ ease }}
+              >
+                <span className="text-3xl">⚠️</span>
+                <h3 className="font-serif text-2xl font-bold text-[#4A1E30]">Something went wrong</h3>
+                <p className="font-sans text-sm text-[#4A1E30] opacity-60">Please try again or email me directly.</p>
               </motion.div>
             ) : (
               <motion.form
