@@ -40,7 +40,7 @@ export default function HeroSection() {
       <div className="relative flex-1 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] z-20">
 
         {/* ── LEFT COLUMN ── */}
-        <div className="flex flex-col items-center md:items-start justify-between px-8 md:px-10 lg:px-16 py-10 md:py-12 order-1 md:order-1">
+        <div className="flex flex-col items-center md:items-start justify-between px-6 md:px-10 lg:px-16 py-10 md:py-12 order-1 md:order-1">
 
           {/* Top: availability pill */}
           <motion.div {...entry(0.2)}>
@@ -71,7 +71,7 @@ export default function HeroSection() {
               <motion.h1
                 className="font-serif font-black leading-none text-white text-center md:text-left"
                 style={{
-                  fontSize: "clamp(52px, 7.5vw, 112px)",
+                  fontSize: "clamp(72px, 7.5vw, 112px)",
                   letterSpacing: "-0.02em",
                   lineHeight: 0.92,
                 }}
@@ -86,7 +86,7 @@ export default function HeroSection() {
             </div>
 
             <motion.p
-              className="font-sans text-white/55 text-[13px] md:text-sm mt-5 leading-relaxed max-w-[230px] text-center md:text-left mx-auto md:mx-0"
+              className="font-sans text-white/55 text-[14px] md:text-sm mt-5 leading-relaxed max-w-xs md:max-w-[230px] text-center md:text-left mx-auto md:mx-0"
               {...entry(0.55)}
             >
               UX/UI Designer &amp; Front-End Developer<br />
@@ -95,18 +95,18 @@ export default function HeroSection() {
           </div>
 
           {/* Bottom: CTA + stats */}
-          <div>
+          <div className="flex flex-col items-center md:items-start w-full">
             <motion.div className="mb-8" {...entry(0.65)}>
               <button onClick={() => scrollTo("portfolio")} className="btn-outline-white">
                 Check My Portfolio &nbsp;→
               </button>
             </motion.div>
 
-            <motion.div className="flex items-center gap-6 justify-center md:justify-start" {...entry(0.75)}>
+            <motion.div className="flex items-center gap-8 md:gap-6 justify-center md:justify-start" {...entry(0.75)}>
               {[["3+", "Years Exp."], ["20+", "Projects"], ["15+", "Happy Clients"]].map(([num, label]) => (
-                <div key={label}>
-                  <p className="font-serif text-white text-xl font-bold leading-none">{num}</p>
-                  <p className="font-sans text-white/35 text-[10px] mt-1 tracking-wide uppercase">{label}</p>
+                <div key={label} className="text-center md:text-left">
+                  <p className="font-serif text-white text-2xl md:text-xl font-bold leading-none">{num}</p>
+                  <p className="font-sans text-white/35 text-[11px] md:text-[10px] mt-1 tracking-wide uppercase">{label}</p>
                 </div>
               ))}
             </motion.div>
@@ -115,7 +115,7 @@ export default function HeroSection() {
 
         {/* ── CENTER: Decorative Monogram ── */}
         <motion.div
-          className="relative flex items-center justify-center order-2 md:order-2 overflow-hidden"
+          className="relative flex items-center justify-center order-2 md:order-2 overflow-hidden py-6 md:py-0"
           style={{ minWidth: "clamp(240px, 34vw, 520px)" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -134,7 +134,7 @@ export default function HeroSection() {
           {/* Monogram centrepiece */}
           <div
             className="relative flex items-center justify-center"
-            style={{ width: "clamp(220px, 26vw, 380px)", height: "clamp(220px, 26vw, 380px)" }}
+            style={{ width: "clamp(280px, 26vw, 380px)", height: "clamp(280px, 26vw, 380px)" }}
           >
             {/* Outer slowly-rotating ring */}
             <motion.div
@@ -202,7 +202,7 @@ export default function HeroSection() {
               <p
                 className="font-serif font-black text-white leading-none"
                 style={{
-                  fontSize: "clamp(42px, 5.5vw, 80px)",
+                  fontSize: "clamp(68px, 5.5vw, 80px)",
                   letterSpacing: "-0.02em",
                   textShadow: "0 0 60px rgba(196,137,154,0.25)",
                 }}
@@ -214,8 +214,8 @@ export default function HeroSection() {
                 style={{ width: "32px", height: "1px", background: "#C4899A" }}
               />
               <p
-                className="font-sans text-white/40 uppercase"
-                style={{ fontSize: "clamp(7px, 0.75vw, 10px)", letterSpacing: "0.26em" }}
+                className="font-sans text-white/40 uppercase text-[9px] md:text-[8px]"
+                style={{ letterSpacing: "0.26em" }}
               >
                 Portfolio
               </p>
@@ -230,7 +230,7 @@ export default function HeroSection() {
         </motion.div>
 
         {/* ── RIGHT COLUMN ── */}
-        <div className="flex flex-col items-center md:items-start justify-between px-8 md:px-10 lg:px-16 py-10 md:py-12 order-3">
+        <div className="flex flex-col items-center md:items-start justify-between px-6 md:px-10 lg:px-16 py-10 md:py-12 order-3">
 
           {/* Top: year + label */}
           <motion.div
@@ -244,9 +244,9 @@ export default function HeroSection() {
           </motion.div>
 
           {/* Middle: message + CTA */}
-          <div className="my-auto py-10 md:py-0">
+          <div className="my-auto py-10 md:py-0 flex flex-col items-center md:items-start">
             <motion.p
-              className="font-sans text-white/60 text-[13px] md:text-sm leading-[1.85] mb-8 max-w-[240px] text-center md:text-left mx-auto md:mx-0"
+              className="font-sans text-white/60 text-[14px] md:text-sm leading-[1.85] mb-8 max-w-xs md:max-w-[240px] text-center md:text-left"
               {...entry(0.4)}
             >
               Feel free to send me a message if you&apos;d like to collaborate or build a website together.
@@ -259,8 +259,8 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Bottom: social links */}
-          <motion.div className="flex flex-col gap-4 items-center md:items-start" {...entry(0.7)}>
+          {/* Bottom: social links — hidden on mobile */}
+          <motion.div className="hidden md:flex flex-col gap-4 md:items-start" {...entry(0.7)}>
             {[
               { label: "LinkedIn", href: "https://www.linkedin.com/in/maryam-nadeem-86534b247/" },
               { label: "GitHub",   href: "https://github.com/maryumxx"                         },
