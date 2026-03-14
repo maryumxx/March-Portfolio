@@ -6,30 +6,44 @@ const ease = [0.25, 0.1, 0.25, 1] as const;
 
 const experiences = [
   {
-    year: "2024 — Present",
-    title: "Senior UX/UI Designer & Front-End Developer",
-    company: "Freelance / Remote",
-    desc: "Working directly with clients across Europe and the Middle East to design and build high-quality web products. Responsible for end-to-end delivery — from research and wireframing to final implementation in Next.js.",
+    year: "Oct 2025 – Present",
+    title: "Freelance Web Designer & Developer",
+    company: "Eagle's Eye Security",
+    desc: "Currently working on a full-stack website design and development project. Started with logo and branding, which impressed the client enough to expand into a complete web solution. Focused on creating a clean, bold, and secure digital experience that reflects the brand's core values — trust, precision, and vigilance.",
   },
   {
-    year: "2022 — 2024",
-    title: "UI Designer & React Developer",
-    company: "Techverse Studio, Karachi",
-    desc: "Led the design and front-end development of client projects spanning e-commerce, SaaS dashboards, and brand websites. Established a component library in Figma and React used across the team.",
+    year: "Feb 2025 & Mar 2025",
+    title: "UI/UX Designer",
+    company: "Freelance Web Design Projects",
+    desc: "Designed two complete website UIs using Figma for freelance clients. Delivered clean and responsive layouts as per client requirements, adapting quickly to real-project demands without prior tool training.",
   },
   {
-    year: "2021 — 2022",
-    title: "Junior Front-End Developer",
-    company: "Digital Spark Agency",
-    desc: "Developed responsive web interfaces with HTML, CSS, JavaScript and React. Collaborated closely with senior designers to translate Figma mockups into pixel-perfect, accessible code.",
+    year: "Jul 2024 – Jul 2025",
+    title: "Frontend Developer — Final Year Project",
+    company: "Hamdard University · Farmware App",
+    desc: "Contributed to the frontend design and UX/UI development of a mobile application built with Ionic Angular and TypeScript. The app helps farmers track cow health through daily questionnaires and symptom-based disease predictions. Focused on a clean, intuitive, and accessible interface that simplifies data entry for rural users.",
+    stack: "Ionic Angular · TypeScript · SQL · SCSS · Python",
   },
   {
-    year: "2020 — 2021",
-    title: "UX/UI Design Internship",
-    company: "Pixelcraft Labs",
-    desc: "Created user flows, wireframes, and high-fidelity prototypes for mobile and web applications. Conducted usability tests and iterated on designs based on feedback.",
+    year: "Jun 2024 – Jul 2024",
+    title: "Web Developer (Frontend)",
+    company: "Encryptix",
+    desc: "Completed internship projects using HTML and CSS, focusing on structure, responsiveness, and clean user interfaces. Gained hands-on experience in real-world frontend implementation across multiple projects.",
+  },
+  {
+    year: "Mar 2024 – Ongoing",
+    title: "Student — Gen AI & Metaverse 3.0",
+    company: "Governor's IT Initiative",
+    desc: "Enrolled in the Governor of Sindh's IT initiative, focusing on Generative AI and Metaverse technologies. Building practical skills in modern development practices including spec-driven development, AI integration, and full-stack engineering.",
   },
 ];
+
+const education = {
+  year: "2021 – 2025",
+  degree: "Bachelor of Science in Computer Science (BSCS)",
+  institution: "Hamdard University",
+  cgpa: "CGPA — 3.41",
+};
 
 export default function ExperienceSection() {
   const ref = useRef<HTMLElement>(null);
@@ -85,9 +99,47 @@ export default function ExperienceSection() {
               <p className="font-sans text-sm text-[#4A1E30] leading-relaxed" style={{ opacity: 0.65 }}>
                 {exp.desc}
               </p>
+              {"stack" in exp && exp.stack && (
+                <p className="font-sans text-[11px] text-[#6B2D45] mt-3 tracking-wide" style={{ opacity: 0.55 }}>
+                  {exp.stack}
+                </p>
+              )}
             </motion.div>
           ))}
         </div>
+
+        {/* Education */}
+        <motion.div
+          className="mt-20 pt-12 border-t"
+          style={{ borderColor: "rgba(107,45,69,0.12)" }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.65, delay: 0.8, ease }}
+        >
+          <p className="section-label text-[#6B2D45] mb-8" style={{ opacity: 0.5 }}>
+            — Education
+          </p>
+          <div className="relative pl-6">
+            <div className="absolute left-0 top-2 w-px h-full" style={{ background: "rgba(107,45,69,0.18)" }} />
+            <div
+              className="absolute -left-[25px] top-1.5 w-2.5 h-2.5 rounded-full"
+              style={{ background: "#6B2D45" }}
+            />
+            <p className="font-sans text-[11px] uppercase tracking-[0.18em] text-[#6B2D45] mb-2" style={{ opacity: 0.6 }}>
+              {education.year}
+            </p>
+            <h3 className="font-serif text-xl md:text-2xl font-semibold text-[#4A1E30] leading-snug mb-1">
+              {education.degree}
+            </h3>
+            <p className="font-sans text-xs text-[#6B2D45] mb-1 font-medium" style={{ opacity: 0.7 }}>
+              {education.institution}
+            </p>
+            <p className="font-sans text-[11px] text-[#6B2D45]" style={{ opacity: 0.5 }}>
+              {education.cgpa}
+            </p>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );

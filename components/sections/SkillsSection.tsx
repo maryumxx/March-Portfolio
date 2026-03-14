@@ -1,22 +1,29 @@
 "use client";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import {
+  Code2, FileCode2, Zap, Braces, FileType2,
+  Layers, Triangle, Smartphone, PenTool,
+  Monitor, MessageSquare, FileText, Lightbulb, RefreshCw,
+} from "lucide-react";
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
 
 const skills = [
-  { name: "HTML5",        icon: "🌐", category: "Core"      },
-  { name: "CSS3",         icon: "🎨", category: "Core"      },
-  { name: "JavaScript",   icon: "⚡", category: "Language"  },
-  { name: "TypeScript",   icon: "📘", category: "Language"  },
-  { name: "React",        icon: "⚛️", category: "Framework" },
-  { name: "Next.js",      icon: "▲",  category: "Framework" },
-  { name: "Tailwind CSS", icon: "🌊", category: "Styling"   },
-  { name: "Figma",        icon: "🖌️", category: "Design"    },
-  { name: "UX Research",  icon: "🔍", category: "Design"    },
-  { name: "Node.js",      icon: "🟢", category: "Back-End"  },
-  { name: "Git",          icon: "📦", category: "Tools"     },
-  { name: "Framer",       icon: "🎬", category: "Motion"    },
+  { name: "HTML",              Icon: Code2,        category: "Core"       },
+  { name: "CSS",               Icon: FileCode2,    category: "Core"       },
+  { name: "JavaScript",        Icon: Zap,          category: "Language"   },
+  { name: "TypeScript",        Icon: Braces,       category: "Language"   },
+  { name: "Python",            Icon: FileType2,    category: "Language"   },
+  { name: "SCSS",              Icon: Layers,       category: "Styling"    },
+  { name: "Next.js",           Icon: Triangle,     category: "Framework"  },
+  { name: "Ionic Angular",     Icon: Smartphone,   category: "Framework"  },
+  { name: "Figma",             Icon: PenTool,      category: "Design"     },
+  { name: "Responsive Design", Icon: Monitor,      category: "Design"     },
+  { name: "Problem-Solving",   Icon: Lightbulb,    category: "Soft Skill" },
+  { name: "Spec-Driven Dev",   Icon: FileText,     category: "Soft Skill" },
+  { name: "Communication",     Icon: MessageSquare,category: "Soft Skill" },
+  { name: "Adaptability",      Icon: RefreshCw,    category: "Soft Skill" },
 ];
 
 export default function SkillsSection() {
@@ -52,7 +59,7 @@ export default function SkillsSection() {
           wireframes to production-ready code.
         </motion.p>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 md:gap-5">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-4 md:gap-5">
           {skills.map((skill, i) => (
             <motion.div
               key={skill.name}
@@ -61,7 +68,12 @@ export default function SkillsSection() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 + i * 0.045, ease }}
             >
-              <span className="text-2xl leading-none" role="img" aria-hidden="true">{skill.icon}</span>
+              <skill.Icon
+                size={22}
+                strokeWidth={1.4}
+                className="text-[#6B2D45]"
+                style={{ opacity: 0.7 }}
+              />
               <span className="font-sans text-[9px] uppercase tracking-[0.16em] text-[#6B2D45] opacity-50">
                 {skill.category}
               </span>

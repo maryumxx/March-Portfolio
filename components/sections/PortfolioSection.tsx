@@ -441,7 +441,7 @@ export default function PortfolioSection() {
         >
           <div className="h-px flex-1" style={{ background: "rgba(107,45,69,0.12)" }} />
           <a
-            href="https://github.com"
+            href="https://github.com/maryumxx"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline-dark flex-shrink-0"
