@@ -40,7 +40,7 @@ export default function HeroSection() {
       <div className="relative flex-1 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] z-20">
 
         {/* ── LEFT COLUMN ── */}
-        <div className="flex flex-col justify-between px-8 md:px-10 lg:px-16 py-10 md:py-12 order-1 md:order-1">
+        <div className="flex flex-col items-center md:items-start justify-between px-8 md:px-10 lg:px-16 py-10 md:py-12 order-1 md:order-1">
 
           {/* Top: availability pill */}
           <motion.div {...entry(0.2)}>
@@ -60,7 +60,7 @@ export default function HeroSection() {
           {/* Middle: name */}
           <div className="my-auto py-10 md:py-0">
             <motion.p
-              className="font-sans text-white/50 text-[13px] tracking-widest uppercase mb-3"
+              className="font-sans text-white/50 text-[13px] tracking-widest uppercase mb-3 text-center md:text-left"
               style={{ letterSpacing: "0.2em" }}
               {...entry(0.3)}
             >
@@ -69,7 +69,7 @@ export default function HeroSection() {
 
             <div className="overflow-hidden">
               <motion.h1
-                className="font-serif font-black leading-none text-white"
+                className="font-serif font-black leading-none text-white text-center md:text-left"
                 style={{
                   fontSize: "clamp(52px, 7.5vw, 112px)",
                   letterSpacing: "-0.02em",
@@ -86,7 +86,7 @@ export default function HeroSection() {
             </div>
 
             <motion.p
-              className="font-sans text-white/55 text-[13px] md:text-sm mt-5 leading-relaxed max-w-[230px]"
+              className="font-sans text-white/55 text-[13px] md:text-sm mt-5 leading-relaxed max-w-[230px] text-center md:text-left mx-auto md:mx-0"
               {...entry(0.55)}
             >
               UX/UI Designer &amp; Front-End Developer<br />
@@ -102,7 +102,7 @@ export default function HeroSection() {
               </button>
             </motion.div>
 
-            <motion.div className="flex items-center gap-6" {...entry(0.75)}>
+            <motion.div className="flex items-center gap-6 justify-center md:justify-start" {...entry(0.75)}>
               {[["3+", "Years Exp."], ["20+", "Projects"], ["15+", "Happy Clients"]].map(([num, label]) => (
                 <div key={label}>
                   <p className="font-serif text-white text-xl font-bold leading-none">{num}</p>
@@ -230,11 +230,11 @@ export default function HeroSection() {
         </motion.div>
 
         {/* ── RIGHT COLUMN ── */}
-        <div className="flex flex-col justify-between px-8 md:px-10 lg:px-16 py-10 md:py-12 order-3">
+        <div className="flex flex-col items-center md:items-start justify-between px-8 md:px-10 lg:px-16 py-10 md:py-12 order-3">
 
           {/* Top: year + label */}
           <motion.div
-            className="flex items-center gap-3 text-white/30 text-[11px] tracking-widest uppercase"
+            className="flex items-center gap-3 text-white/30 text-[11px] tracking-widest uppercase justify-center md:justify-start"
             style={{ letterSpacing: "0.18em" }}
             {...entry(0.25)}
           >
@@ -246,7 +246,7 @@ export default function HeroSection() {
           {/* Middle: message + CTA */}
           <div className="my-auto py-10 md:py-0">
             <motion.p
-              className="font-sans text-white/60 text-[13px] md:text-sm leading-[1.85] mb-8 max-w-[240px]"
+              className="font-sans text-white/60 text-[13px] md:text-sm leading-[1.85] mb-8 max-w-[240px] text-center md:text-left mx-auto md:mx-0"
               {...entry(0.4)}
             >
               Feel free to send me a message if you&apos;d like to collaborate or build a website together.
@@ -260,7 +260,7 @@ export default function HeroSection() {
           </div>
 
           {/* Bottom: social links */}
-          <motion.div className="flex flex-col gap-4" {...entry(0.7)}>
+          <motion.div className="flex flex-col gap-4 items-center md:items-start" {...entry(0.7)}>
             {[
               { label: "LinkedIn", href: "https://www.linkedin.com/in/maryam-nadeem-86534b247/" },
               { label: "GitHub",   href: "https://github.com/maryumxx"                         },
