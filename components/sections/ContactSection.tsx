@@ -57,7 +57,7 @@ export default function ContactSection() {
 
         {/* Email pill */}
         <motion.a
-          href="mailto:hello@maryamnadeem.com"
+          href="mailto:maryambuttxx@gmail.com"
           className="inline-flex items-center gap-3 px-6 py-3 rounded-full border text-sm font-medium transition-colors mb-14"
           style={{ borderColor: "rgba(107,45,69,0.28)", color: "#6B2D45" }}
           {...anim(0.24)}
@@ -66,7 +66,7 @@ export default function ContactSection() {
           <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
             <path d="M1 3.5L7.5 9 14 3.5M1 3.5h13v9H1V3.5z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          hello@maryamnadeem.com
+          maryambuttxx@gmail.com
         </motion.a>
 
         {/* Form */}
