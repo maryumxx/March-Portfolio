@@ -40,7 +40,7 @@ export default function HeroSection() {
       <div className="relative flex-1 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] z-20">
 
         {/* ── LEFT COLUMN ── */}
-        <div className="flex flex-col justify-between px-8 md:px-10 lg:px-16 py-10 md:py-12 order-2 md:order-1">
+        <div className="flex flex-col justify-between px-8 md:px-10 lg:px-16 py-10 md:py-12 order-1 md:order-1">
 
           {/* Top: availability pill */}
           <motion.div {...entry(0.2)}>
@@ -115,7 +115,7 @@ export default function HeroSection() {
 
         {/* ── CENTER: Decorative Monogram ── */}
         <motion.div
-          className="relative flex items-center justify-center order-1 md:order-2 overflow-hidden"
+          className="relative flex items-center justify-center order-2 md:order-2 overflow-hidden"
           style={{ minWidth: "clamp(240px, 34vw, 520px)" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -283,7 +283,7 @@ export default function HeroSection() {
 
       {/* DEVELOPER / DESIGNER — massive decorative type */}
       <div
-        className="relative z-20 overflow-hidden pointer-events-none select-none"
+        className="relative z-20 overflow-hidden pointer-events-none select-none hidden md:block"
         style={{ marginTop: "-4px" }}
       >
         <motion.div
