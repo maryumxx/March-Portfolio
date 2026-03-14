@@ -5,10 +5,10 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 const ease = [0.25, 0.1, 0.25, 1] as const;
 
 const socials = [
-  { label: "LinkedIn", href: "https://linkedin.com" },
-  { label: "GitHub",   href: "https://github.com"   },
-  { label: "Dribbble", href: "https://dribbble.com" },
-  { label: "Twitter",  href: "https://twitter.com"  },
+  { label: "GitHub",   href: "https://github.com/maryumxx"                                    },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/maryam-nadeem-86534b247/"           },
+  { label: "Twitter",  href: "https://x.com/MaryamNadeem01"                                   },
+  { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61578826023769"         },
 ];
 
 type Status = "idle" | "sending" | "sent";
@@ -171,6 +171,18 @@ export default function ContactSection() {
         <p className="font-sans text-[11px] text-[#6B2D45] opacity-40 tracking-wider">
           © 2025 Maryam Nadeem. All rights reserved.
         </p>
+        <div className="flex items-center gap-5">
+          {socials.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank" rel="noopener noreferrer"
+              className="font-sans text-[10px] uppercase tracking-widest text-[#6B2D45] opacity-40 hover:opacity-80 transition-opacity"
+            >
+              {s.label}
+            </a>
+          ))}
+        </div>
         <p className="font-sans text-[11px] text-[#6B2D45] opacity-40 tracking-wider">
           Designed &amp; Built with care in Pakistan
         </p>

@@ -262,9 +262,10 @@ export default function HeroSection() {
           {/* Bottom: social links */}
           <motion.div className="flex flex-col gap-4" {...entry(0.7)}>
             {[
-              { label: "LinkedIn", href: "https://linkedin.com" },
-              { label: "GitHub",   href: "https://github.com"   },
-              { label: "Dribbble", href: "https://dribbble.com" },
+              { label: "LinkedIn", href: "https://www.linkedin.com/in/maryam-nadeem-86534b247/" },
+              { label: "GitHub",   href: "https://github.com/maryumxx"                         },
+              { label: "Twitter",  href: "https://x.com/MaryamNadeem01"                        },
+              { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61578826023769" },
             ].map((s) => (
               <a
                 key={s.label}
