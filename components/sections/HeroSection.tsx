@@ -281,7 +281,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* DEVELOPER / DESIGNER — massive decorative type */}
+      {/* DEVELOPER / DESIGNER — massive decorative type
       <div
         className="relative z-20 overflow-hidden pointer-events-none select-none hidden md:block"
         style={{ marginTop: "-4px" }}
@@ -307,7 +307,7 @@ export default function HeroSection() {
           <span style={{ color: "transparent", WebkitTextStroke: "2px #fff" }}>DE</span>
           <span style={{ color: "#fff" }}>SIGNER</span>
         </motion.div>
-      </div>
+      </div> */}
 
       {/* Scroll indicator */}
       <motion.button
