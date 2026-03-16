@@ -3,31 +3,52 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "About",     href: "#about"     },
+  { label: "About", href: "#about" },
   { label: "Portfolio", href: "#portfolio" },
-  { label: "Skills",    href: "#skills"    },
-  { label: "Contact",   href: "#contact"   },
+  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" },
 ];
 
 function MaryamLogo() {
   return (
-    <a href="#hero" className="flex items-center gap-3 no-underline group" aria-label="Maryam Nadeem home">
+    <a
+      href="#hero"
+      className="flex items-center gap-3 no-underline group"
+      aria-label="Maryam Nadeem home"
+    >
       {/* Monogram */}
-      <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+      <svg
+        width="52"
+        height="52"
+        viewBox="0 0 52 52"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="flex-shrink-0"
+      >
         {/* Stylised M/N lettermark */}
         <path
           d="M10 40 L10 14 L20 30 L26 20 L32 30 L42 14 L42 40"
-          stroke="rgba(255,255,255,0.88)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"
+          stroke="rgba(255,255,255,0.88)"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          fill="none"
         />
         {/* Script-style underline flourish */}
         <path
           d="M8 44 Q26 48 44 44"
-          stroke="rgba(255,255,255,0.45)" strokeWidth="1" strokeLinecap="round" fill="none"
+          stroke="rgba(255,255,255,0.45)"
+          strokeWidth="1"
+          strokeLinecap="round"
+          fill="none"
         />
       </svg>
       {/* Wordmark */}
       <div className="leading-none">
-        <div className="text-white font-semibold tracking-widest text-xs uppercase" style={{ letterSpacing: "0.18em" }}>
+        <div
+          className="text-white font-semibold tracking-widest text-xs uppercase"
+          style={{ letterSpacing: "0.18em" }}
+        >
           Maryam<span className="text-[var(--muted-rose)]">/</span>Nadeem
         </div>
         <div className="text-white/40 text-[9px] tracking-[0.22em] uppercase mt-0.5">
@@ -86,12 +107,31 @@ export default function Navbar() {
 
         {/* Resume button + mobile toggle */}
         <div className="flex items-center gap-4">
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline-white hidden md:inline-flex">
-            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" className="opacity-75">
-              <path d="M6.5 1v7M3.5 5.5l3 3 3-3M1.5 10.5h10" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            Resume
-          </a>
+          <div className="hidden md:inline-flex">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:inline-flex btn-outline-white navbar-resume"
+            >
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 13 13"
+                fill="none"
+                className="opacity-75"
+              >
+                <path
+                  d="M6.5 1v7M3.5 5.5l3 3 3-3M1.5 10.5h10"
+                  stroke="currentColor"
+                  strokeWidth="1.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              Resume
+            </a>
+          </div>
 
           {/* Hamburger */}
           <button
@@ -120,7 +160,10 @@ export default function Navbar() {
         {mobileOpen && (
           <motion.div
             className="md:hidden"
-            style={{ background: "rgba(74,30,48,0.97)", borderTop: "1px solid rgba(255,255,255,0.06)" }}
+            style={{
+              background: "rgba(74,30,48,0.97)",
+              borderTop: "1px solid rgba(255,255,255,0.06)",
+            }}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -139,7 +182,10 @@ export default function Navbar() {
                   {link.label}
                 </motion.button>
               ))}
-              <a href="/resume.pdf" className="btn-outline-white self-start mt-2">
+              <a
+                href="/resume.pdf"
+                className="btn-outline-white self-start mt-2"
+              >
                 Resume
               </a>
             </div>
