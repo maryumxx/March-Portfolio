@@ -196,12 +196,9 @@ export default function ContactSection() {
       </div>
 
       {/* Footer */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 mt-20 pt-8 border-t border-[#6B2D45]/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 mt-20 pt-8 border-t border-[#6B2D45]/10 flex justify-center">
         <p className="font-sans text-[11px] text-[#6B2D45] opacity-40 tracking-wider">
           © 2025 Maryam Nadeem. All rights reserved.
-        </p>
-        <p className="font-sans text-[11px] text-[#6B2D45] opacity-40 tracking-wider">
-          Designed &amp; Built with care in Pakistan
         </p>
       </div>
     </section>
