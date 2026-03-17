@@ -6,7 +6,7 @@ export default async function handler(req, res) {
 
     try {
       const response = await axios.post(
-        "https://eagleseyesecurity.netlify.app:55000/alerts",
+        "https://holli-noninterfering-zuri.ngrok-free.dev/alerts",
         {
           agent: "maryam-portfolio",
           rule: type,
