@@ -82,7 +82,7 @@ export default function ContactSection() {
           <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
             <path d="M1 3.5L7.5 9 14 3.5M1 3.5h13v9H1V3.5z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          maryambuttxx@gmail.com
+          maryamn.dev7@gmail.com
         </motion.a>
 
         {/* Form */}
