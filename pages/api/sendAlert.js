@@ -6,7 +6,7 @@ export default async function handler(req, res) {
 
     try {
       const response = await axios.post(
-        "https://holli-noninterfering-zuri.ngrok-free.dev/alerts",
+        "https://holli-noninterfering-zuri.ngrok-free.dev/api/wazuh/alerts",
         {
           agent: "maryam-portfolio",
           rule: type,
