@@ -63,10 +63,13 @@ fetch("/api/sendAlert", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
-    type: "SQL Injection Detected",
-    description: "Suspicious payload on login form",
+    type: "Test Attack",
+    description: "This is a test alert from maryamweb",
   }),
-});
+})
+  .then((res) => res.json())
+  .then((data) => console.log("Alert response:", data))
+  .catch((err) => console.error("Alert error:", err));
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
