@@ -59,6 +59,15 @@ function MaryamLogo() {
   );
 }
 
+fetch("/api/sendAlert", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    type: "SQL Injection Detected",
+    description: "Suspicious payload on login form",
+  }),
+});
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -194,4 +203,6 @@ export default function Navbar() {
       </AnimatePresence>
     </motion.header>
   );
+
+  
 }
