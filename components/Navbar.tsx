@@ -59,7 +59,7 @@ function MaryamLogo() {
   );
 }
 
-fetch("/api/sendAlert", {
+fetch("/api/wazuh/alerts", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
