@@ -253,7 +253,7 @@ const projects: Project[] = [
     tags: ["SQA", "SaaS", "Deployment Tool"],
     img: "/images/usectl-logo.jpeg",
     link: "https://github.com/maryumxx/usectl-qa",
-    size: "xl",
+    size: "medium",
   },
 ];
 
