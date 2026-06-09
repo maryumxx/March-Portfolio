@@ -243,8 +243,8 @@ const projects: Project[] = [
     size: "small",
   },
   {
-    id: 15,
-    num: "15",
+    id: 17,
+    num: "17",
     title: "QA of usectl",
     subtitle: "Cloud Deployment Tool",
     category: "SQA",
@@ -420,9 +420,11 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
 /* ── Filter tabs ─────────────────────────────────────────────── */
 const TABS: { label: Category; count: number }[] = [
-  { label: "All",          count: 16 },
+  { label: "All",          count: 17 },
   { label: "UI/UX Design", count: 6  },
   { label: "Development",  count: 10 },
+  { label: "SQA",  count: 1 },
+  { label: "Open-source Contributions",  count: 0 },
 ];
 
 /* ── Section ─────────────────────────────────────────────────── */
@@ -432,9 +434,9 @@ export default function PortfolioSection() {
   const [filter, setFilter] = useState<Category>("All");
 
   const visible =
-    filter === "UI/UX Design" ? projects.filter((p) => p.category === "UI/UX Design")
-    : filter === "Development" ? projects.filter((p) => p.category === "Development")
-    : projects;
+  filter === "All"
+    ? projects
+    : projects.filter((p) => p.category === filter);
 
   return (
     <section id="portfolio" className="section-cream py-24 md:py-36">
