@@ -59,21 +59,17 @@ export default function AboutSection() {
             <motion.div className="w-10 h-px bg-[#6B2D45] opacity-40" {...anim(0.28)} />
 
             <motion.p className="font-sans text-sm md:text-[15px] text-[#4A1E30] leading-relaxed opacity-75" {...anim(0.34)}>
-              I&apos;m Maryam Nadeem — a UX/UI Designer and Front-End Developer with a passion for creating
-              elegant, user-centred digital products. Based in Pakistan, I blend thoughtful design with
-              clean, performant code to build experiences that feel both beautiful and effortless.
-            </motion.p>
+I'm Maryam Nadeem, a Computer Science student passionate about building AI-powered automation systems, full-stack web applications, and intuitive digital experiences. I work with technologies such as Python, TypeScript, Next.js, Angular, and Ionic, combining development with user-focused design to create practical solutions for real-world problems.
+</motion.p>
 
-            <motion.p className="font-sans text-sm md:text-[15px] text-[#4A1E30] leading-relaxed opacity-65" {...anim(0.4)}>
-              My design philosophy centres on simplicity and intentionality. I believe every element on
-              a screen should serve a purpose — that great design is invisible, quietly guiding users
-              towards their goals without friction or confusion.
-            </motion.p>
+<motion.p className="font-sans text-sm md:text-[15px] text-[#4A1E30] leading-relaxed opacity-65" {...anim(0.4)}>
+My experience spans frontend development, UI/UX design, and AI-integrated projects, with a growing focus on agentic AI and workflow automation. Alongside development, I am actively building my skills in Software Quality Assurance (SQA), including manual testing, test case design, and software testing fundamentals to better understand and improve software quality.
+</motion.p>
 
-            <motion.p className="font-sans text-sm md:text-[15px] text-[#4A1E30] leading-relaxed opacity-65" {...anim(0.46)}>
-              When I&apos;m not designing or coding, I&apos;m exploring typography, studying editorial
-              layouts, or finding inspiration in the quiet details of everyday life.
-            </motion.p>
+<motion.p className="font-sans text-sm md:text-[15px] text-[#4A1E30] leading-relaxed opacity-65" {...anim(0.46)}>
+I enjoy continuous learning and exploring new technologies that bridge automation, design, and user experience. My goal is to build reliable, scalable, and impactful solutions that make technology more efficient and accessible for businesses and users alike.
+</motion.p>
+
 
             <motion.div className="flex gap-4 flex-wrap pt-2" {...anim(0.52)}>
               <a href="#portfolio" className="btn-outline-dark">View Portfolio</a>
