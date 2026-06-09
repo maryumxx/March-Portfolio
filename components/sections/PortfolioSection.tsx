@@ -255,6 +255,32 @@ const projects: Project[] = [
     link: "https://github.com/maryumxx/usectl-qa",
     size: "medium",
   },
+  {
+    id: 18,
+    num: "18",
+    title: "AI-Powered Full-Stack Todo System",
+    subtitle: "ToDo App with RAG Assistant",
+    category: "Development",
+    projectType: "Hackathon Project",
+    year: "2026",
+    tags: ["RAG", "SaaS", "Spec-driven development"],
+    img: "/images/taskflow.jpeg",
+    link: "https://taskflowtodo.vercel.app/",
+    size: "xl",
+  },
+  {
+    id: 19,
+    num: "19",
+    title: "Physical AI & Humanoid Robotics Documentation Website with RAG bot",
+    subtitle: "Documentation with RAG Assistant",
+    category: "Development",
+    projectType: "Hackathon Project",
+    year: "2025",
+    tags: ["RAG", "SaaS", "Spec-driven development"],
+    img: "/images/ebook.jpeg",
+    link: "https://padh-book.vercel.app/",
+    size: "small",
+  },
 ];
 
 /* ── Individual card ─────────────────────────────────────────── */
