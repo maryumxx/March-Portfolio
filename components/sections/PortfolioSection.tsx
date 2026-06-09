@@ -251,7 +251,7 @@ const projects: Project[] = [
     projectType: "Practice Project",
     year: "2026",
     tags: ["SQA", "SaaS", "Deployment Tool"],
-    img: "/images/usectl.png",
+    img: "/images/usectl-logo.jpeg",
     link: "https://github.com/maryumxx/usectl-qa",
     size: "xl",
   },
